@@ -45,22 +45,23 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
             result = firstNumber + secondNumber;
             sendResult = Integer.toString(result);
             request.setAttribute("message", sendResult);
-            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticCalculator.jsp").forward(request, response);        
+                    
        } else if(request.getParameter("subtraction") != null) {
             result = firstNumber - secondNumber;
             sendResult = Integer.toString(result);
             request.setAttribute("message", sendResult);
-            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticCalculator.jsp").forward(request, response);
+            
        } else if(request.getParameter("multiplication") != null) {
             result = firstNumber * secondNumber;
             sendResult = Integer.toString(result);
             request.setAttribute("message", sendResult);
-            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticCalculator.jsp").forward(request, response);
+            
        } else {
             result = firstNumber % secondNumber;
             sendResult = Integer.toString(result);
             request.setAttribute("message", sendResult);
-            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticCalculator.jsp").forward(request, response);
+           
        } 
+        getServletContext().getRequestDispatcher("/WEB-INF/arithmeticCalculator.jsp").forward(request, response);
     }   
 }
